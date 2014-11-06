@@ -59,7 +59,7 @@ public class MainActivity extends Activity {
             @Override
             public CharSequence filter(CharSequence source, int start, int end, Spanned dest, int dstart, int dend) {
 
-                if (source.toString().matches("^[0-9.]+$")) {
+                if (source.toString().matches(AppConst.INPUT_FILTER_NUMERIC_WITH_DOT)) {
                     return source;
                 } else {
                     return "";
