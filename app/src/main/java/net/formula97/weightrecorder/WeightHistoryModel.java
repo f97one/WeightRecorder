@@ -72,4 +72,24 @@ public class WeightHistoryModel {
 
         return histories == null ? null : histories;
     }
+
+    public boolean erase(final WeightHistory historyEntity) {
+        boolean ret = false;
+
+        try {
+            ret = TransactionManager.callInTransaction(mDao.getConnectionSource(), new Callable<Boolean>() {
+                @Override
+                public Boolean call() throws Exception {
+
+                    int affected = mDao.delete(historyEntity);
+
+                    return affected > 0 ? true : false;
+                }
+            });
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+
+        return ret;
+    }
 }

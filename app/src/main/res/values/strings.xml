@@ -6,5 +6,7 @@
     <string name="action_settings">Settings</string>
     <string name="hint">Prease enter today\'s weight</string>
     <string name="date">Date :</string>
+    <string name="wish_to_erase">Do you wish to erase this record?</string>
+    <string name="confirm">Confirmation</string>
 
 </resources>
